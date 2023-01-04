@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mtg_blog/bloc/mtg_bloc.dart';
 import 'package:mtg_blog/pages/user_form.dart';
+import 'package:mtg_blog/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,9 +27,7 @@ class MyApp extends StatelessWidget {
         Locale('en', ''),
         Locale('es', ''),
       ],
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: mainTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
