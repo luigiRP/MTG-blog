@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mtg_blog/bloc/mtg_bloc.dart';
 import 'package:mtg_blog/pages/user_form.dart';
-import 'package:mtg_blog/theme.dart';
+import 'package:mtg_blog/ui/theme.dart';
 
 void main() {
   runApp(const MTGBlogApp());
@@ -38,6 +38,7 @@ class MainWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: BlocProvider(
         create: (_) => MTGBloc(),
         child: BlocBuilder<MTGBloc, MTGState>(builder: (context, state) {
@@ -45,8 +46,10 @@ class MainWidget extends StatelessWidget {
             return const UserForm();
           }
           if (state is LoadingState) {
-            return Transform.scale(
-                scale: 0.5, child: const CircularProgressIndicator());
+            return Center(
+              child: Transform.scale(
+                  scale: 2, child: const CircularProgressIndicator()),
+            );
           }
           return const UserForm();
         }),

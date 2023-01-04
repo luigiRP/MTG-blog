@@ -8,7 +8,13 @@ class MTGState extends Equatable {
 }
 
 class InitialState extends MTGState {
-  const InitialState();
+  const InitialState({this.name, this.surname, this.email, this.date});
+
+  final String? name;
+  final String? surname;
+  final String? email;
+  final DateTime? date;
+
   @override
   List<Object> get props => [];
   @override
