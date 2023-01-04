@@ -7,16 +7,15 @@ import 'package:mtg_blog/pages/user_form.dart';
 import 'package:mtg_blog/theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MTGBlogApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MTGBlogApp extends StatelessWidget {
+  const MTGBlogApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       localizationsDelegates: const [
         AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
@@ -28,21 +27,14 @@ class MyApp extends StatelessWidget {
         Locale('es', ''),
       ],
       theme: mainTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MainWidget(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MainWidget extends StatelessWidget {
+  const MainWidget({super.key});
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
