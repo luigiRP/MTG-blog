@@ -32,8 +32,19 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      body: Column(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.width * 0.5,
+            width: MediaQuery.of(context).size.width * 0.5,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fitWidth,
+                image: AssetImage('lib/assets/images/mtg_logo.png'),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
