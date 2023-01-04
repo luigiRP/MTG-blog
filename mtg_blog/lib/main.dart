@@ -46,18 +46,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => MTGBloc(),
-      child: BlocBuilder<MTGBloc, MTGState>(builder: (context, state) {
-        if (state is InitialState) {
+    return Scaffold(
+      body: BlocProvider(
+        create: (_) => MTGBloc(),
+        child: BlocBuilder<MTGBloc, MTGState>(builder: (context, state) {
+          if (state is InitialState) {
+            return const UserForm();
+          }
+          if (state is LoadingState) {
+            return Transform.scale(
+                scale: 0.5, child: const CircularProgressIndicator());
+          }
           return const UserForm();
-        }
-        if (state is LoadingState) {
-          return Transform.scale(
-              scale: 0.5, child: const CircularProgressIndicator());
-        }
-        return const UserForm();
-      }),
+        }),
+      ),
     );
   }
 }
