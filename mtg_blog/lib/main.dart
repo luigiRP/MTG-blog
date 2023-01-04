@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:mtg_blog/bloc/mtg_bloc.dart';
+import 'package:mtg_blog/pages/user_form.dart';
+import 'package:mtg_blog/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,9 +27,7 @@ class MyApp extends StatelessWidget {
         Locale('en', ''),
         Locale('es', ''),
       ],
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: mainTheme,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -44,20 +46,18 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.width * 0.5,
-            width: MediaQuery.of(context).size.width * 0.5,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fitWidth,
-                image: AssetImage('lib/assets/images/mtg_logo.png'),
-              ),
-            ),
-          ),
-          Text(AppLocalizations.of(context)!.helloWorld)
-        ],
+      body: BlocProvider(
+        create: (_) => MTGBloc(),
+        child: BlocBuilder<MTGBloc, MTGState>(builder: (context, state) {
+          if (state is InitialState) {
+            return const UserForm();
+          }
+          if (state is LoadingState) {
+            return Transform.scale(
+                scale: 0.5, child: const CircularProgressIndicator());
+          }
+          return const UserForm();
+        }),
       ),
     );
   }
