@@ -8,3 +8,16 @@ abstract class MTGEvent extends Equatable {
 }
 
 class Initialize extends MTGEvent {}
+
+class LoadData extends MTGEvent {
+  final String name;
+  final String surname;
+  final DateTime date;
+  final String email;
+
+  const LoadData(
+      {required this.name,
+      required this.surname,
+      required this.date,
+      required this.email});
+}

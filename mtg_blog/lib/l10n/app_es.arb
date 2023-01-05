@@ -1,3 +1,12 @@
 {
-    "helloWorld": "¡Hola Mundo!"
+    "name": "Nombre",
+    "empty_name": "Su nombre es obligatorio",
+    "surname": "Apellido",
+    "empty_surname": "Su apellido es obligatorio",
+    "email": "Correo Electrónico",
+    "empty_email": "Su correo es obligatorio",
+    "invalid_email": "Formato no válido como correo",
+    "test_date": "Fecha de Prueba",
+    "change_date": "Cambiar Fecha",
+    "next": "Siguiente"
 }

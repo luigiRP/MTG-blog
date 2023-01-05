@@ -1,3 +1,12 @@
 {
-    "helloWorld": "Hello World!"
+    "name": "Name",
+    "empty_name": "Your name is required",
+    "surname": "Surname",
+    "empty_surname": "Your surname is required",
+    "email": "Email",
+    "empty_email": "Your email is required",
+    "invalid_email": "Invalid email format",
+    "test_date": "Test Date",
+    "change_date": "Change Date",
+    "next": "Next"
 }

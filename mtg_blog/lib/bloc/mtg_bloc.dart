@@ -5,11 +5,24 @@ part 'mtg_events.dart';
 part 'mtg_states.dart';
 
 class MTGBloc extends Bloc<MTGEvent, MTGState> {
-  late String username;
+  String? name;
+  String? surname;
+  String? email;
+  DateTime date = DateTime.now();
+
   MTGBloc() : super(const InitialState()) {
     on<Initialize>(initialize);
+    on<LoadData>(loadData);
   }
   void initialize(Initialize event, Emitter<MTGState> emit) async {
-    emit(const InitialState());
+    emit(InitialState(name: name, surname: surname, email: email, date: date));
+  }
+
+  void loadData(LoadData event, Emitter<MTGState> emit) async {
+    emit(const LoadingState());
+    name = event.name;
+    surname = event.surname;
+    date = event.date;
+    email = event.email;
   }
 }
