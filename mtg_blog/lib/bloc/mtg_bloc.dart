@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mtg_blog/api/api_cards.dart';
+import 'package:mtg_blog/models/card_list_model.dart';
 
 part 'mtg_events.dart';
 part 'mtg_states.dart';
@@ -24,5 +26,7 @@ class MTGBloc extends Bloc<MTGEvent, MTGState> {
     surname = event.surname;
     date = event.date;
     email = event.email;
+
+    CardList card_list = await CardAPI.getCards();
   }
 }
