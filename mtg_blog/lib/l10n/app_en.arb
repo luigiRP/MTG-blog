@@ -8,5 +8,6 @@
     "invalid_email": "Invalid email format",
     "test_date": "Test Date",
     "change_date": "Change Date",
-    "next": "Next"
+    "next": "Next",
+    "card_blog": "Cart Blog"
 }

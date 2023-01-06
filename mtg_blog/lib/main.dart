@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mtg_blog/bloc/mtg_bloc.dart';
+import 'package:mtg_blog/pages/card_blog.dart';
 import 'package:mtg_blog/pages/user_form.dart';
 import 'package:mtg_blog/ui/theme.dart';
 
@@ -50,6 +51,9 @@ class MainWidget extends StatelessWidget {
               child: Transform.scale(
                   scale: 2, child: const CircularProgressIndicator()),
             );
+          }
+          if (state is CardBlogState) {
+            return CardBlog(cards: state.cards);
           }
           return const UserForm();
         }),

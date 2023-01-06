@@ -8,5 +8,6 @@
     "invalid_email": "Formato no válido como correo",
     "test_date": "Fecha de Prueba",
     "change_date": "Cambiar Fecha",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "card_blog": "Blog de Cartas"
 }

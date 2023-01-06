@@ -11,10 +11,11 @@ class CardList {
     required this.cards,
   });
 
-  List<Card> cards;
+  List<MTGCard> cards;
 
   factory CardList.fromJson(Map<String, dynamic> json) => CardList(
-        cards: List<Card>.from(json["cards"].map((x) => Card.fromJson(x))),
+        cards:
+            List<MTGCard>.from(json["cards"].map((x) => MTGCard.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {

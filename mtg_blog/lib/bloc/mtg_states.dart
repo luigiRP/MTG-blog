@@ -26,3 +26,11 @@ class LoadingState extends MTGState {
   @override
   String toString() => 'Loading State';
 }
+
+class CardBlogState extends MTGState {
+  const CardBlogState({required this.cards});
+
+  final CardList cards;
+  @override
+  String toString() => 'Card Blog State';
+}

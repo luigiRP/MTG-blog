@@ -2,8 +2,8 @@ import 'package:mtg_blog/models/foreign_name_model.dart';
 import 'package:mtg_blog/models/legality_element_model.dart';
 import 'package:mtg_blog/models/ruling_model.dart';
 
-class Card {
-  Card({
+class MTGCard {
+  MTGCard({
     required this.name,
     required this.manaCost,
     required this.cmc,
@@ -65,7 +65,7 @@ class Card {
   List<Ruling>? rulings;
   List<String>? supertypes;
 
-  factory Card.fromJson(Map<String, dynamic> json) => Card(
+  factory MTGCard.fromJson(Map<String, dynamic> json) => MTGCard(
         name: json["name"],
         manaCost: json["manaCost"],
         cmc: json["cmc"],
