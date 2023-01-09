@@ -9,5 +9,6 @@
     "test_date": "Test Date",
     "change_date": "Change Date",
     "next": "Next",
-    "card_blog": "Cart Blog"
+    "card_blog": "Card Blog",
+    "card_description": "Card Description"
 }
