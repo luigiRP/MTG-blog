@@ -56,3 +56,8 @@ const TextStyle navbarButtons = TextStyle(
     fontSize: 16,
     color: Colors.white,
     fontFamily: 'Bw Modelica');
+const TextStyle appBarTitle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+    color: Colors.white,
+    fontFamily: 'Bw Modelica');
