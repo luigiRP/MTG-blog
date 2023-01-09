@@ -8,6 +8,7 @@ import 'package:mtg_blog/api/http_override.dart';
 import 'package:mtg_blog/bloc/mtg_bloc.dart';
 import 'package:mtg_blog/pages/card_blog.dart';
 import 'package:mtg_blog/pages/card_description.dart';
+import 'package:mtg_blog/pages/error_page.dart';
 import 'package:mtg_blog/pages/user_form.dart';
 import 'package:mtg_blog/ui/theme.dart';
 
@@ -56,9 +57,15 @@ class MainWidget extends StatelessWidget {
                 date: state.date);
           }
           if (state is LoadingState) {
-            return Center(
-              child: Transform.scale(
-                  scale: 2, child: const CircularProgressIndicator()),
+            return WillPopScope(
+              onWillPop: () async {
+                context.read<MTGBloc>().add(const Initialize());
+                return false;
+              },
+              child: Center(
+                child: Transform.scale(
+                    scale: 2, child: const CircularProgressIndicator()),
+              ),
             );
           }
           if (state is CardBlogState) {
@@ -68,6 +75,9 @@ class MainWidget extends StatelessWidget {
           }
           if (state is CardDescriptionState) {
             return CardDescriptionPage(card: state.card);
+          }
+          if (state is ErrorState) {
+            return const ErrorPage();
           }
           return const UserForm();
         }),

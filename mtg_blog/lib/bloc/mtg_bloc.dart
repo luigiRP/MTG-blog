@@ -30,17 +30,38 @@ class MTGBloc extends Bloc<MTGEvent, MTGState> {
     surname = event.surname;
     date = event.date;
     email = event.email;
+    try {
+      Map<String, dynamic> res = await CardAPI.getCards();
 
-    CardList cards = await CardAPI.getCards();
+      var statusCode = res['status_code'];
+      CardList cards = res['cards'];
 
-    emit(CardBlogState(cards: cards));
+      if (statusCode == 200) {
+        emit(CardBlogState(cards: cards));
+      } else {
+        emit(ErrorState());
+      }
+    } catch (e) {
+      emit(ErrorState());
+    }
   }
 
   void loadCards(LoadCards event, Emitter<MTGState> emit) async {
     emit(const LoadingState());
-    CardList cards = await CardAPI.getCards();
+    try {
+      Map<String, dynamic> res = await CardAPI.getCards();
 
-    emit(CardBlogState(cards: cards));
+      var statusCode = res['status_code'];
+      CardList cards = res['cards'];
+
+      if (statusCode == 200) {
+        emit(CardBlogState(cards: cards));
+      } else {
+        emit(ErrorState());
+      }
+    } catch (e) {
+      emit(ErrorState());
+    }
   }
 
   void cardDescription(CardDescription event, Emitter<MTGState> emit) {

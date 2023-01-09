@@ -42,3 +42,8 @@ class CardDescriptionState extends MTGState {
   @override
   String toString() => 'Card Description State';
 }
+
+class ErrorState extends MTGState {
+  @override
+  String toString() => 'Error State';
+}

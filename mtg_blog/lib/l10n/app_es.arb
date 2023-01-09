@@ -10,5 +10,8 @@
     "change_date": "Cambiar Fecha",
     "next": "Siguiente",
     "card_blog": "Blog de Cartas",
-    "card_description": "Descripción de la Carta"
+    "card_description": "Descripción de la Carta",
+    "error": "Error",
+    "error_description": "Ha ocurrido un error, intente nuevamente más tarde",
+    "accept": "Aceptar"
 }
