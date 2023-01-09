@@ -28,6 +28,7 @@ class MTGBloc extends Bloc<MTGEvent, MTGState> {
     email = event.email;
 
     CardList cards = await CardAPI.getCards();
+
     emit(CardBlogState(cards: cards));
   }
 }
