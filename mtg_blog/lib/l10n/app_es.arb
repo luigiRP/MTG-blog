@@ -9,5 +9,6 @@
     "test_date": "Fecha de Prueba",
     "change_date": "Cambiar Fecha",
     "next": "Siguiente",
-    "card_blog": "Blog de Cartas"
+    "card_blog": "Blog de Cartas",
+    "card_description": "Descripción de la Carta"
 }

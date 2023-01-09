@@ -23,3 +23,13 @@ class LoadData extends MTGEvent {
       required this.date,
       required this.email});
 }
+
+class LoadCards extends MTGEvent {
+  const LoadCards();
+}
+
+class CardDescription extends MTGEvent {
+  final MTGCard card;
+
+  const CardDescription({required this.card});
+}

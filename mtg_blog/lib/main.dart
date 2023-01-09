@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:mtg_blog/api/http_override.dart';
 import 'package:mtg_blog/bloc/mtg_bloc.dart';
 import 'package:mtg_blog/pages/card_blog.dart';
+import 'package:mtg_blog/pages/card_description.dart';
 import 'package:mtg_blog/pages/user_form.dart';
 import 'package:mtg_blog/ui/theme.dart';
 
@@ -64,6 +65,9 @@ class MainWidget extends StatelessWidget {
             return CardBlog(
               cards: state.cards,
             );
+          }
+          if (state is CardDescriptionState) {
+            return CardDescriptionPage(card: state.card);
           }
           return const UserForm();
         }),

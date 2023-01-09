@@ -62,10 +62,14 @@ class _CardList extends StatelessWidget {
           iconImage = Image.network(card.imageUrl!);
         }
 
-        return ListTile(
-            title: Text(card.name),
-            subtitle: Text(card.type),
-            trailing: iconImage);
+        return GestureDetector(
+          onTap: () => context.read<MTGBloc>().add(CardDescription(card: card)),
+          child: ListTile(
+              title: Text(card.name),
+              subtitle: Text(card.type),
+              trailing: iconImage,
+              shape: const Border(bottom: BorderSide())),
+        );
       }),
     );
   }
