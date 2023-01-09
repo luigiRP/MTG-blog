@@ -46,6 +46,12 @@ const TextStyle description1 = TextStyle(
     color: Color.fromRGBO(105, 105, 105, 1),
     fontFamily: 'Bw Modelica',
     overflow: TextOverflow.fade);
+const TextStyle description2 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
+    color: Colors.black,
+    fontFamily: 'Bw Modelica',
+    overflow: TextOverflow.fade);
 const TextStyle addButton = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 18,
