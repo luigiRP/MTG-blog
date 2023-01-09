@@ -10,5 +10,8 @@
     "change_date": "Change Date",
     "next": "Next",
     "card_blog": "Card Blog",
-    "card_description": "Card Description"
+    "card_description": "Card Description",
+    "error": "Error",
+    "error_description": "An error has ocurred, please try later",
+    "accept": "Accept"
 }
