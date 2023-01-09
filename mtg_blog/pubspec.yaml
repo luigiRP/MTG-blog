@@ -33,7 +33,6 @@ flutter:
   assets:
   - lib/assets/images/mtg_logo.png
   - lib/assets/images/mtg_icon.png
-  - lib/assets/ca/server.crt
 
 flutter_icons:
   android: "launcher_icon"

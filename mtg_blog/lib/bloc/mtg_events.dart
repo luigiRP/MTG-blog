@@ -7,7 +7,9 @@ abstract class MTGEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class Initialize extends MTGEvent {}
+class Initialize extends MTGEvent {
+  const Initialize();
+}
 
 class LoadData extends MTGEvent {
   final String name;

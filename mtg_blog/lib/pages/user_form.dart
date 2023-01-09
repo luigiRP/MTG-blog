@@ -76,7 +76,6 @@ class _UserFormState extends State<UserForm> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           TextFormField(
-                            initialValue: widget.name,
                             controller: name,
                             validator: (value) {
                               if (value == null || value == '') {
@@ -88,7 +87,6 @@ class _UserFormState extends State<UserForm> {
                                 labelText: AppLocalizations.of(context)!.name),
                           ),
                           TextFormField(
-                            initialValue: widget.surname,
                             controller: surname,
                             validator: (value) {
                               if (value == null || value == '') {
@@ -102,7 +100,6 @@ class _UserFormState extends State<UserForm> {
                                     AppLocalizations.of(context)!.surname),
                           ),
                           TextFormField(
-                            initialValue: widget.email,
                             controller: email,
                             validator: (value) {
                               if (value == null || value == '') {

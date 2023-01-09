@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mtg_blog/bloc/mtg_bloc.dart';
 import 'package:mtg_blog/models/card_list_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:mtg_blog/models/card_model.dart';
@@ -14,10 +16,20 @@ class CardBlog extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: CustomScrollView(physics: const ScrollPhysics(), slivers: [
-        CustomAppBar(title: AppLocalizations.of(context)!.card_blog),
-        _CardList(cards: cards.cards)
-      ]),
+      child: WillPopScope(
+        onWillPop: (() async {
+          context.read<MTGBloc>().add(const Initialize());
+          return false;
+        }),
+        child: CustomScrollView(physics: const ScrollPhysics(), slivers: [
+          CustomAppBar(
+              title: AppLocalizations.of(context)!.card_blog,
+              onPressedHandle: () {
+                context.read<MTGBloc>().add(const Initialize());
+              }),
+          _CardList(cards: cards.cards)
+        ]),
+      ),
     );
   }
 }

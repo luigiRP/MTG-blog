@@ -48,7 +48,11 @@ class MainWidget extends StatelessWidget {
         create: (_) => MTGBloc(),
         child: BlocBuilder<MTGBloc, MTGState>(builder: (context, state) {
           if (state is InitialState) {
-            return const UserForm();
+            return UserForm(
+                name: state.name,
+                surname: state.surname,
+                email: state.email,
+                date: state.date);
           }
           if (state is LoadingState) {
             return Center(
@@ -57,7 +61,9 @@ class MainWidget extends StatelessWidget {
             );
           }
           if (state is CardBlogState) {
-            return CardBlog(cards: state.cards);
+            return CardBlog(
+              cards: state.cards,
+            );
           }
           return const UserForm();
         }),
